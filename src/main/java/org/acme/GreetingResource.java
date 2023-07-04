@@ -9,8 +9,16 @@ import jakarta.ws.rs.core.MediaType;
 public class GreetingResource {
 
     @GET
+    @Path("/{name}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String helloName(String name) {
+        return "Hello " + name + " from RESTEasy Reactive";
+    }
+
+    @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         return "Hello from RESTEasy Reactive";
     }
+    
 }
